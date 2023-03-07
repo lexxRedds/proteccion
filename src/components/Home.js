@@ -16,7 +16,12 @@ function Home() {
 
     const minute1 = Math.floor(minutes / 10);
     const minute2 = minutes % 10;
+
     let fibo = [minute1, minute2];
+
+    if(minute1 > minute2) {
+      fibo = [minute2, minute1];
+    }
 
     for (let i = 2; i < seconds; i++) {
       fibo[i] = fibo[i - 1] + fibo[i - 2];
@@ -25,8 +30,8 @@ function Home() {
     setFibo(fibo.reverse());
 
         
-    const sum = parseInt(minutes, 10) + parseInt(seconds, 10);
-    setTimeArray([...timeArray, sum]);
+   /* const sum = parseInt(minutes, 10) + parseInt(seconds, 10);
+    setTimeArray([...timeArray, sum]);*/
 
   }
 
