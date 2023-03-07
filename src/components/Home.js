@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Graph from "./Graph";
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -21,7 +22,7 @@ function Home() {
       fibo[i] = fibo[i - 1] + fibo[i - 2];
     }
 
-    setFibo(fibo);
+    setFibo(fibo.reverse());
 
         
     const sum = parseInt(minutes, 10) + parseInt(seconds, 10);
@@ -40,11 +41,11 @@ function Home() {
       <button onClick={handleClick}>Generar Serie</button>
       <div>
         <h1>Serie de Fibonacci</h1>
-        <ul>
+        <div>
           {fibo.map((value, index) => (
             <span key={index}>{value} </span>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
