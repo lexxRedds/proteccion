@@ -42,7 +42,7 @@ function Home() {
         <h1>Serie de Fibonacci</h1>
         <ul>
           {fibo.map((value, index) => (
-            <li key={index}>{value}</li>
+            <span key={index}>{value} </span>
           ))}
         </ul>
       </div>
