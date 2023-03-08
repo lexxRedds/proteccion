@@ -19,7 +19,7 @@ function Home() {
 
     let fibo = [minute1, minute2];
 
-    if(minute1 > minute2) {
+    if (minute1 > minute2) {
       fibo = [minute2, minute1];
     }
 
@@ -29,9 +29,9 @@ function Home() {
 
     setFibo(fibo.reverse());
 
-        
-   /* const sum = parseInt(minutes, 10) + parseInt(seconds, 10);
-    setTimeArray([...timeArray, sum]);*/
+
+    /* const sum = parseInt(minutes, 10) + parseInt(seconds, 10);
+     setTimeArray([...timeArray, sum]);*/
 
   }
 
@@ -40,19 +40,23 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>Hora Actual</h1>
-      <div>{currentTime.toLocaleTimeString()}</div>
-      <button onClick={handleClick}>Generar Serie</button>
-      <div>
-        <h1>Serie de Fibonacci</h1>
+    <>
+      <header>Protección: Pensiones, Cesantías, Ahorro e Inversión</header>
+      <main>
+        <h1>Hora Actual</h1>
+        <h2>{currentTime.toLocaleTimeString()}</h2>
+        <button onClick={handleClick}>Generar Serie</button>
         <div>
-          {fibo.map((value, index) => (
-            <span key={index}>{value} </span>
-          ))}
+          <h1>Serie de Fibonacci</h1>
+          <div>
+            {fibo.map((value, index) => (
+              <span key={index}>{value} </span>
+            ))}
+          </div>
+          <div><Graph data={fibo} /></div>
         </div>
-      </div>
-    </div>
+      </main>
+    </>
   );
 }
 
