@@ -3,9 +3,8 @@ body {
     font-family: 'Cabin', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #606060;
 }
-
-
 
 .App {
     margin: 5px 0px;
@@ -24,6 +23,8 @@ header {
 
 header h1 {
     font-size: 2rem;
+    font-weight: bold;
+    color: #0033a0;
 }
 
 header h2 {
@@ -31,11 +32,11 @@ header h2 {
 }
 
 main {
-    padding: 20px;
+    padding: 40px 20px;
     display: grid;
     gap: 20px;
-    grid-template-columns: 40% 30% 30%;
-    grid-template-rows: auto auto 50vmin;
+    grid-template-columns: 40% 30% 25%;
+    grid-template-rows: auto auto 40vmin;
     grid-template-areas:
         "time time time"
         "name name name"
@@ -43,7 +44,6 @@ main {
 }
 
 main section {
-    /*justify-self: center;*/
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -58,21 +58,43 @@ main section:first-child {
 main section:first-child h3 {
     font-size: 1.6rem;
     font-weight: bold;
-    margin: 10px;
+    text-align: center;
 }
 
 main section:first-child h2 {
+    padding: 10px;
     text-align: center;
     font-size: 1.8rem;
     font-weight: bold;
     margin: 10px;
     border: 2px solid #e3e829;
     border-radius: 5px;
+}
 
+main section:first-child button {
+    padding: 20px;
+    margin: 20px auto;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #e3e829;
+    color: #0033a0;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    width: 250px;
 }
 
 main section:nth-child(2) {
     grid-area: name;
+}
+
+main section:nth-child(2) h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0033a0;
 }
 
 main section:nth-child(3) {
@@ -95,6 +117,7 @@ main section:last-child {
 }
 
 footer {
+    padding-top: 10px;
     background-color: white;
     border-top: 2px solid #f0f1f2;
     width: 100%;
@@ -102,6 +125,10 @@ footer {
     justify-content: center;
     position: fixed;
     bottom: 30px;
+}
+
+footer .footer-title {
+    padding: 0 40px;
 }
 
 footer .footer-section {

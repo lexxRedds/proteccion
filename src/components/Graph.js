@@ -30,7 +30,7 @@ const Chart = ({ data }) => {
       },
       title: {
         display: true,
-        text: 'Chart.js Line Chart',
+        text: 'Representación Gráfica de la Serie Generada',
       },
     },
   };
@@ -39,11 +39,11 @@ const Chart = ({ data }) => {
     labels: data.map((_, index) => index + 1),
     datasets: [
       {
-        label: null,
+        label: 'Fibonacci',
         data: data,
         fill: false,
         borderColor: "rgb(75, 192, 192)",
-        tension: 0.1
+        tension: 0.3
       }
     ]
   };
