@@ -22,11 +22,24 @@ ChartJS.register(
 );
 
 const Chart = ({ data }) => {
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Line Chart',
+      },
+    },
+  };
+
   const chartData = {
     labels: data.map((_, index) => index + 1),
     datasets: [
       {
-        label: null, 
+        label: null,
         data: data,
         fill: false,
         borderColor: "rgb(75, 192, 192)",
@@ -36,9 +49,7 @@ const Chart = ({ data }) => {
   };
 
   return (
-    <div>
-      <Line data={chartData} />
-    </div>
+    <Line options={options} data={chartData} />
   );
 };
 

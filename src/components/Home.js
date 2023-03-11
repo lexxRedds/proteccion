@@ -3,7 +3,6 @@ import Graph from "./Graph";
 
 function Home() {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [timeArray, setTimeArray] = useState([]);
   const [fibo, setFibo] = useState([]);
 
   function updateTime() {
@@ -28,11 +27,6 @@ function Home() {
     }
 
     setFibo(fibo.reverse());
-
-
-    /* const sum = parseInt(minutes, 10) + parseInt(seconds, 10);
-     setTimeArray([...timeArray, sum]);*/
-
   }
 
   useEffect(() => {
@@ -41,21 +35,65 @@ function Home() {
 
   return (
     <>
-      <header>Protección: Pensiones, Cesantías, Ahorro e Inversión</header>
+      <header>
+        <h1>Protección</h1>
+        <h2>Pensiones, Cesantías, Ahorro e Inversión</h2>
+      </header>
       <main>
-        <h1>Hora Actual</h1>
-        <h2>{currentTime.toLocaleTimeString()}</h2>
-        <button onClick={handleClick}>Generar Serie</button>
-        <div>
+        <section className='current-time'>
+          <h3>Hora Actual</h3>
+          <h2>{currentTime.toLocaleTimeString()}</h2>
+          <button onClick={handleClick}>Generar Serie</button>
+        </section>
+        <section className='series-name'>
           <h1>Serie de Fibonacci</h1>
-          <div>
+        </section>
+        <section className='series-values'>
+          <h4>Valores generados para la serie de Fibonacci a partir del minuto {currentTime.getMinutes()}</h4>
+          <p>
             {fibo.map((value, index) => (
               <span key={index}>{value} </span>
             ))}
-          </div>
-          <div><Graph data={fibo} /></div>
-        </div>
+          </p>
+        </section>
+        <section className='series-graph'><Graph data={fibo} /></section>
       </main>
+      <footer>
+        <h6 className="footer-title">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-phone-call"><path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Líneas de Servicio
+        </h6>
+        <div className="footer-section">
+          <p className="caption">
+            Bogotá
+          </p>
+          <p className="bold">744&nbsp;44&nbsp;64</p>
+        </div>
+        <div className="footer-section">
+          <p className="caption">
+            Medellín y Cali
+          </p>
+          <p className="bold">510&nbsp;90&nbsp;99</p>
+        </div>
+        <div className="footer-section">
+          <p className="caption">
+            Barranquilla
+          </p>
+          <p className="bold">219&nbsp;79&nbsp;99</p>
+        </div>
+        <div className="footer-section">
+          <p className="caption">
+            Cartagena
+          </p>
+          <p className="bold">642&nbsp;79&nbsp;99</p>
+        </div>
+        <div className="footer-section">
+          <p className="caption">
+            Resto del país
+          </p>
+          <p className="bold">01&nbsp;8000&nbsp;52&nbsp;8000</p>
+        </div>
+      </footer>
     </>
   );
 }

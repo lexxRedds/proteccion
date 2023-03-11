@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: 'Cabin', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.App {
+    margin: 5px 0px;
+    background-color: #fafbfc;
+    height: calc(100vh - 10px);
+}
+
+header {
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f1f2;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header h2 {
+    font-size: 1.2rem;
+}
+
+main {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 40% 30% 30%;
+    grid-template-rows: auto auto 50vmin;
+    grid-template-areas:
+        "time time time"
+        "name name name"
+        "values graph graph";
+}
+
+main section {
+    /*justify-self: center;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+main section:first-child {
+    grid-area: time;
+    flex-direction: column;
+}
+
+main section:first-child h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 10px;
+}
+
+main section:first-child h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 10px;
+    border: 2px solid #e3e829;
+    border-radius: 5px;
+
+}
+
+main section:nth-child(2) {
+    grid-area: name;
+}
+
+main section:nth-child(3) {
+    grid-area: values;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+main section:nth-child(3) h4 {
+    padding-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+main section:last-child {
+    width: 100%;
+    grid-area: graph;
+}
+
+footer {
+    background-color: white;
+    border-top: 2px solid #f0f1f2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 30px;
+}
+
+footer .footer-section {
+    padding: 0 15px;
+}
+
+footer .footer-section p.caption {
+    font-size: 0.9rem;
+    color: #808182;
+    margin-bottom: 7px;
+}
