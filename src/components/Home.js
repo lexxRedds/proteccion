@@ -9,9 +9,14 @@ function Home() {
     setInterval(() => setCurrentTime(new Date()), 1000);
   }
 
+
   function handleClick() {
     const time = currentTime.toLocaleTimeString();
     const [hours, minutes, seconds] = time.split(':');
+
+    const valuesHeader = document.querySelector("h4");
+    valuesHeader.textContent = `Valores generados para la serie de Fibonacci a partir del minuto ${minutes}`;
+
 
     const minute1 = Math.floor(minutes / 10);
     const minute2 = minutes % 10;
@@ -49,7 +54,7 @@ function Home() {
           <h1>Serie de Fibonacci</h1>
         </section>
         <section className='series-values'>
-          <h4>Valores generados para la serie de Fibonacci a partir del minuto {currentTime.getMinutes()}</h4>
+          <h4>Series values</h4>
           <p>
             {fibo.map((value, index) => (
               <span key={index}>{value} </span>

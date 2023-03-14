@@ -9,7 +9,9 @@ body {
 .App {
     margin: 5px 0px;
     background-color: #fafbfc;
-    height: calc(100vh - 10px);
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 10px);
 }
 
 header {
@@ -100,8 +102,8 @@ main section:nth-child(2) h1 {
 main section:nth-child(3) {
     grid-area: values;
     display: flex;
-    flex-wrap: wrap;
-    align-content: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 main section:nth-child(3) h4 {
@@ -123,12 +125,12 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
-    position: fixed;
-    bottom: 30px;
 }
 
 footer .footer-title {
     padding: 0 40px;
+    color: #0033a0;
+    font-weight: bold;
 }
 
 footer .footer-section {
@@ -139,4 +141,36 @@ footer .footer-section p.caption {
     font-size: 0.9rem;
     color: #808182;
     margin-bottom: 7px;
+    text-align: center;
+}
+
+footer .footer-section p.bold {
+    text-align: center;
+    font-weight: bold;
+}
+/*************(Media Queries)***************/
+
+@media (max-width: 1080px) {
+    .App {
+        height: calc(100% - 10px);
+    }
+
+    main {
+        padding: 5px;
+        gap: 10px;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            "time"
+            "name"
+            "values"
+            "graph";
+    }
+}
+
+@media (max-width: 600px) {    
+    header, footer {
+        flex-direction: column;
+        align-items: center;
+    }
 }
